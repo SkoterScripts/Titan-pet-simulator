@@ -1,0 +1,54 @@
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = kavoUi.CreateLib("Titan Pet Simulator!","Midnight")
+
+---Tabs
+ 
+local Tab1 = window:NewTab("Main")
+local Tab1Section = Tab1:NewSection("Free Roblox Scripts")
+local Tab2 = window:NewTab("Misc")
+local Tab2Section = Tab2:NewSection("Free Roblox Scripts")
+local Tab2Section = Tab2:NewSection("Made By biel17125")
+local Tab2Section = Tab2:NewSection("freerobloxscripts.com")
+local Tab3 = window:NewTab("Sup")
+local Tab3Section = Tab3:NewSection("Sup is word")
+local Tab1Section = Tab1:NewSection("Made By biel17125")
+local Tab1Section = Tab1:NewSection("freerobloxscripts.com")
+ 
+---Buttons
+
+Tab1Section:NewToggle("Auto Tap", "gain strength automatically", function(state)
+    if state then
+_G.tap = true
+while _G.tap == true do
+game:GetService("Players").LocalPlayer.TapAbility.TapAbilityRemote:FireServer()
+wait()
+end
+     else
+_G.tap = false
+end
+end)
+
+Tab2Section:NewSlider("Walkspeed", "Changes how fast you walk.", 250, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Tab2Section:NewSlider("JumpPower", "Changes how fast you jump.", 250, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+Tab2Section:NewButton("Infinite Yield", "Give you infinite yield script.", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+Tab2Section:NewToggle("Infinite Jump", "Lets you infinitely jump", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+Tab3Section:NewButton("Keyboard","Pc Like Keyboard",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/manimcool21/Keyboard-FE/main/Protected%20(3).lua'),true))()
+end)
